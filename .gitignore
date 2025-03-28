@@ -1,0 +1,16 @@
+.idea/
+*.iml
+
+
+.gradle/
+build/
+target/
+
+mysql-data/
+
+uploads/
+
+env.yml
+.DS_Store
+be/.DS_Store
+.project
