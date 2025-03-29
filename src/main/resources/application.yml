@@ -6,7 +6,7 @@ spring:
   application:
     name: config-server
   profiles:
-    active: git # git: 깃서버 참조, native: 로컬 파일 참조
+    active: native # git: 깃서버 참조, native: 로컬 파일 참조
   cloud:
     config:
       server:
@@ -19,11 +19,11 @@ spring:
           search-paths: .
 #        bootstrap: true
 
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
 
 management:
   endpoints:
