@@ -10,7 +10,7 @@ mysql-data/
 
 uploads/
 
-env.yml
+.env
 .DS_Store
 be/.DS_Store
 .project
