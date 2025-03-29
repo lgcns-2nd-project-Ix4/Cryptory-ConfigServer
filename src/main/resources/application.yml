@@ -1,20 +1,29 @@
 server:
   port: 8888
+
+
 spring:
   application:
     name: config-server
+  profiles:
+    active: git # git: 깃서버 참조, native: 로컬 파일 참조
   cloud:
     config:
       server:
+        native:
+          search-locations: classpath:/config
         git:
-          uri:  https://github.com/0ssang/cryptory-2nd-project.git
-          default-label: main
-          search-paths: config-folder
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+          uri: https://github.com/lgcns-2nd-project-Ix4/ConfigFolder.git
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
+          search-paths: .
+#        bootstrap: true
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
 
 management:
   endpoints:
